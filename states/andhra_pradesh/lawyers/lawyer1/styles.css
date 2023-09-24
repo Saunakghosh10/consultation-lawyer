@@ -1,0 +1,20 @@
+/* Styles for Lawyer Profiles */
+.lawyer-profile {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.lawyer-profile h2 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.lawyer-profile p {
+  font-size: 1rem; /* 16px */
+  text-align: center;
+}
