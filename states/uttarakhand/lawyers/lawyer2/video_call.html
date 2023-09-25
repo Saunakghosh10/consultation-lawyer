@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Video Call - Lawyer 1</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Book a Video Call</h1>
+    </header>
+    <section class="video-call-info">
+      <h2>Lawyer Information</h2>
+      <p>Name: Lawyer 1</p>
+      <p>Email: lawyer1@example.com</p>
+      <p>Phone: +91 9876543210</p>
+    </section>
+    <section class="booking-form">
+      <h2>Fill out the Form</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time:</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Message (Max 500 words):</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            maxlength="500"
+            required
+            style="resize: none"
+          ></textarea>
+          <p id="word-count">0 words</p>
+        </div>
+        <div class="form-group">
+          <label for="google-meet-link">Google Meet Link:</label>
+          <input
+            type="url"
+            id="google-meet-link"
+            name="google-meet-link"
+            placeholder="https://meet.google.com/your-meet-link"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-primary">Submit</button>
+        </div>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; 2023 Lawyer Consultation</p>
+    </footer>
+    <script>
+      const messageTextarea = document.getElementById("message");
+      const wordCount = document.getElementById("word-count");
+
+      messageTextarea.addEventListener("input", () => {
+        const message = messageTextarea.value;
+        const words = message.trim().split(/\s+/).filter(Boolean);
+        const wordCountValue = words.length;
+        wordCount.textContent = `${wordCountValue} ${
+          wordCountValue === 1 ? "word" : "words"
+        }`;
+
+        // Limit the textarea to 500 words
+        if (wordCountValue > 500) {
+          messageTextarea.value = words.slice(0, 500).join(" ");
+          wordCount.textContent = "500 words";
+        }
+      });
+    </script>
+  </body>
+</html>
